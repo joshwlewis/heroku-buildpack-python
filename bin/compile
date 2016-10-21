@@ -27,6 +27,11 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo $ROOT_DIR
+echo $BUILD_DIR
+echo $CACHE_DIR
+echo $ENV_DIR
+
 # Static configurations for virtualenv caches.
 VIRTUALENV_LOC=".heroku/venv"
 LEGACY_TRIGGER="lib/python2.7"
@@ -120,6 +125,10 @@ export PKG_CONFIG_PATH=/app/.heroku/vendor/lib/pkg-config:$BUILD_DIR/.heroku/ven
 
 # Switch to the repo's context.
 cd $BUILD_DIR
+
+echo $BUILD_DIR
+pwd
+ls -al
 
 # Warn for lack of Procfile.
 if [[ ! -f Procfile ]]; then
